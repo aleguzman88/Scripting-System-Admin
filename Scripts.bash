@@ -158,6 +158,14 @@ Get-WindowsImage -ImagePath "D:\sources\install.wim" | Select-Object ImageName
 # Get information about the image with index 1 from the specified WIM file
 Get-WindowsImage -ImagePath "D:\sources\install.wim" -Index 1 | Select-Object ImageName
 
+# Install Hyper-V role with all sub-features and management tools
+Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools
+#-Name Hyper-V: Specifies the name of the feature to be installed, which is "Hyper-V" in this case.
+#-IncludeAllSubFeature: Installs all sub-features associated with the specified feature, ensuring that all necessary components are installed for Hyper-V.
+#-IncludeManagementTools: Includes the Hyper-V management tools, such as Hyper-V Manager and the Hyper-V PowerShell module.
+#This command is typically used on a Windows Server machine to enable the Hyper-V role, allowing the system to function as a hypervisor and run virtual machines.
+
+
 
 
 
